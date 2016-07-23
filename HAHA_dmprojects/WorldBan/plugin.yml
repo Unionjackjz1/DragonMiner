@@ -1,0 +1,12 @@
+main: me.alonlevi.worldban.Main
+name: DMWorldBan
+version: 1.0
+author: HahaYouFell
+website: mcdragonminer.enjin.com
+
+
+commands:
+  worldban:
+    description: Bans a player from world Wild!
+  worldunban:
+    description: Unbans a player from world Wild!

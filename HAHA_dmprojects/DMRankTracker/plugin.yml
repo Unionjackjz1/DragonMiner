@@ -1,0 +1,10 @@
+main: me.alonlevi.dmranks.Main
+version: 1.0
+name: DMRanks
+author: HahaYouFell
+description: Voter ranks!
+
+
+commands:
+  voter:
+    description: Voter rank command!

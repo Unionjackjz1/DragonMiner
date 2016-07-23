@@ -1,0 +1,10 @@
+main: dm.alonlevi.spells.Main
+version: 1.0
+name: DMSpells
+description: A plugin that allows players to use spells
+author: HahaYouFell
+
+
+commands:
+  spell:
+    description: Main command

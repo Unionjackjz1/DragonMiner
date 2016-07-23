@@ -1,0 +1,9 @@
+main: dm.alonlevi.builderchat.Main
+version: 1.0
+name: DMBuilderChat
+author: HahaYouFell
+
+
+commands:
+  builderchat:
+    description: None of your business!
