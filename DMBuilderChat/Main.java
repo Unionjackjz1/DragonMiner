@@ -1,24 +1,29 @@
 package com.unionjackjz1.main;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
-import org.bukkit.event.player.PlayerChatEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 
-public class Main extends JavaPlugin implements Listener{
+public class Main extends JavaPlugin implements CommandExecutor, Listener{
+	public void onEnable(){
+		users.clear();
+	}
+	
+	public void onDisable(){
+		users.clear();
+	}
+	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	ArrayList<String> users = new ArrayList();
 	
@@ -29,10 +34,10 @@ public class Main extends JavaPlugin implements Listener{
 			if (args.length == 0){
 				if (users.contains(player.getName())){
 					users.remove(player.getName());
-					player.sendMessage(ChatColor.GOLD + "Builder Chat: " + ChatColor.RED + "DISABLED!");
+					player.sendMessage(ChatColor.GOLD + "Builder Chat: " + ChatColor.RED + "Disabled!");
 				}else{
 					users.add(player.getName());
-					player.sendMessage(ChatColor.GOLD + "Builder Chat: " + ChatColor.GREEN + "ENABLED!");
+					player.sendMessage(ChatColor.GOLD + "Builder Chat: " + ChatColor.GREEN + "Enabled!");
 				}
 			}else{
 				String myString = "";
@@ -40,20 +45,22 @@ public class Main extends JavaPlugin implements Listener{
 					String arg = args[i] + " ";
 		             myString = myString + arg;
 		        }
-				Bukkit.broadcast(ChatColor.DARK_AQUA + "[" + ChatColor.AQUA + player.getName() + ChatColor.DARK_AQUA + "] " + ChatColor.WHITE + myString, "chat.builder");
+				Bukkit.broadcast(ChatColor.DARK_BLUE+ "[" + ChatColor.BLUE + "B " + player.getName() + ChatColor.DARK_BLUE+ "] " + ChatColor.WHITE + myString, "chat.builder");
 			}
+		}else if (!(player.hasPermission("chat.builder"))){
+			player.sendMessage(ChatColor.RED + "You do not have permission to use this!");
 		}
 		
 		return true;
 	}
 	
-	@SuppressWarnings("deprecation")
-	@EventHandler
-	public void onPlayerChat(PlayerChatEvent e) {
-		for (Player p : Bukkit.getOnlinePlayers()) {
-			if (users.contains(p.getName())) {
+	@EventHandler(priority=EventPriority.HIGH)
+	public void adminToggle(AsyncPlayerChatEvent e) {
+		Player player = e.getPlayer();
+		if (users.contains(player.getName())) {
+			if (player.hasPermission("chat.builder")){
+				Bukkit.broadcast(ChatColor.DARK_BLUE + "[" + ChatColor.BLUE + "B " + player.getName() + ChatColor.DARK_BLUE + "] " + ChatColor.WHITE + e.getMessage(), "chat.builder");
 				e.setCancelled(true);
-				Bukkit.broadcast(ChatColor.DARK_AQUA + "[" + ChatColor.AQUA + p.getName() + ChatColor.DARK_AQUA + "] " + ChatColor.WHITE + e.getMessage(), "chat.builder");
 			}
 		}
 	}
