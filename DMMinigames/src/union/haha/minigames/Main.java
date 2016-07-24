@@ -30,6 +30,7 @@ public class Main extends JavaPlugin implements Listener {
 	public List<String> playerswaiting = new ArrayList<String>();
 
 	int amount_playerswaiting;
+	int maxplayerswaiting = mgconf.getInt("max-players");
 
 	public void onEnable() {
 		getServer().getPluginManager().registerEvents(this, this);
@@ -57,7 +58,7 @@ public class Main extends JavaPlugin implements Listener {
 				mgconf.getInt("waitingroom_y"), mgconf.getInt("waitingroom_z"));
 		if (e.getPlayer().getLocation().getChunk() == waitingchunk.getChunk()) {
 			amount_playerswaiting++;
-			if (amount_playerswaiting == 6) {
+			if (amount_playerswaiting == maxplayerswaiting) {
 				getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable() {
 
 					@Override
@@ -86,9 +87,10 @@ public class Main extends JavaPlugin implements Listener {
 						public void run() {
 							for  (Player p : Bukkit.getOnlinePlayers()) {
 								if (playerswaiting.contains(p.getName())) {
-									getServer().dispatchCommand(getServer().getConsoleSender(), "spawn " + p.getName());
+									p.teleport(new Location(getServer().getWorld(mgconf.getString("end_world")), mgconf.getInt("end_x"), mgconf.getInt("end_x"), mgconf.getInt("end_x")));
 								}
 							}
+							status = Game.ended;
 							
 						}
 						
@@ -105,14 +107,20 @@ public class Main extends JavaPlugin implements Listener {
 			if (args.length == 2) {
 				if (args[0].equalsIgnoreCase("join")) {
 					if (args[1].equalsIgnoreCase("battles")) {
-						if (amount_playerswaiting == 6) {
+						if (amount_playerswaiting == maxplayerswaiting) {
 							sender.sendMessage(ct("&cGame is full! Please wait for another game to start."));
-						} else if (amount_playerswaiting < 6) {
-							Player p = (Player) sender;
-							p.teleport(new Location(getServer().getWorld(mgconf.getString("waitingroom_world")), mgconf.getInt("waitingroom_x"), mgconf.getInt("waitingroom_y"), mgconf.getInt("waitingroom_z")));
-							p.sendMessage(ct("&aYou have been teleported to the game!"));
-							playerswaiting.add(p.getName());
-						}
+						} else if (amount_playerswaiting < maxplayerswaiting) {
+							if (status == Game.ended) {
+								Player p = (Player) sender;
+								p.teleport(new Location(getServer().getWorld(mgconf.getString("waitingroom_world")),
+										mgconf.getInt("waitingroom_x"), mgconf.getInt("waitingroom_y"),
+										mgconf.getInt("waitingroom_z")));
+								p.sendMessage(ct("&aYou have been teleported to the game!"));
+								playerswaiting.add(p.getName());
+							}
+						} else if (status == Game.started) {
+							sender.sendMessage(ct("&cGame has already started! Please wait for another game to start."));
+							}
 					}
 				} else {
 					sender.sendMessage(ct("&3Error: &1Invalid arguements, commands: /game join <game>(battles)"));
