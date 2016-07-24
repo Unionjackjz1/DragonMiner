@@ -1,7 +1,20 @@
+#Dragonminer Minigames config 
+
+# 
+# 
+# 
+
 countdown: 10
 rewards:
     -/crate key {group} hidden
 
+waitingroom_world: flatroom
 waitingroom_x: -360
 waitingroom_y: 223
 waitingroom_z: 728
+
+game_world: flatroom
+game_x: 3000
+game_y: 5
+game_z: 3000
+game_time: 600
