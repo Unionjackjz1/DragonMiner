@@ -1,0 +1,29 @@
+name: RandomTP
+version: 1.1
+description: A 1.10 alternative to RandomTP.
+author: Mafrans
+main: RandomTP
+#----COMMANDS----#
+commands:
+  randomtp:
+    description: The main command of RandomTP.
+    usage: /<command> <player>
+    aliases: [rtp]
+    permission: rtp.self
+  rtpportal:
+    description: Add or remove portals;
+    usage: /<command> <add|remove>
+    permission: rtp.portals
+
+#----PERMISSIONS----#
+permissions:
+  rtp.self:
+    description: Allows using /randomtp.
+    default: op
+  rtp.others:
+    description: Allows using /randomtp on others.
+    default: op
+  rtp.portals:
+    description: Allows using /rtpportal.
+    default: op
+  
