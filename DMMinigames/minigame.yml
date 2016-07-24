@@ -1,0 +1,7 @@
+countdown: 10
+rewards:
+    -/crate key {group} hidden
+
+waitingroom_x: -360
+waitingroom_y: 223
+waitingroom_z: 728
