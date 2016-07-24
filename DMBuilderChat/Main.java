@@ -1,6 +1,7 @@
 package com.unionjackjz1.main;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -15,17 +16,17 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 
-public class Main extends JavaPlugin implements CommandExecutor, Listener{
+public class Main extends JavaPlugin implements Listener{
 	public void onEnable(){
 		users.clear();
+		getServer().getPluginManager().registerEvents(this, this);
 	}
 	
 	public void onDisable(){
 		users.clear();
 	}
 	
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	ArrayList<String> users = new ArrayList();
+	ArrayList<String> users = new ArrayList<String>();
 	
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {	
@@ -55,7 +56,7 @@ public class Main extends JavaPlugin implements CommandExecutor, Listener{
 	}
 	
 	@EventHandler(priority=EventPriority.HIGH)
-	public void adminToggle(AsyncPlayerChatEvent e) {
+	public void onPlayerChat(AsyncPlayerChatEvent e) {
 		Player player = e.getPlayer();
 		if (users.contains(player.getName())) {
 			if (player.hasPermission("chat.builder")){
