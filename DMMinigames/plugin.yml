@@ -1,0 +1,9 @@
+main: union.haha.minigames.Main
+version: 1.0
+name: DMMinigames
+author: HahaYouFell and Unionjackjz1
+
+
+commands:
+  game:
+    description: Main command!

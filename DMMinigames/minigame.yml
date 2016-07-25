@@ -1,0 +1,26 @@
+#Dragonminer Minigames config 
+
+# 
+# 
+# 
+
+countdown: 10
+max-players: 6
+rewards:
+    -/crate key {group} hidden
+
+waitingroom_world: flatroom
+waitingroom_x: -360
+waitingroom_y: 223
+waitingroom_z: 728
+
+game_world: flatroom
+game_x: 3000
+game_y: 5
+game_z: 3000
+game_time: 600
+
+end_world: flatroom
+end_x: 9000
+end_y: 5
+end_z: 100000
