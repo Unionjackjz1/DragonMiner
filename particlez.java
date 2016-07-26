@@ -7,6 +7,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin implements Listener{
@@ -26,19 +27,15 @@ public class Main extends JavaPlugin implements Listener{
 			}
 		} 
 		Location loc = player.getLocation();
-		run(loc);
+		onMove(loc);
 		
 		return true;
 	}
 	
-	public void run(Location location){
-		
-		for(Player player : Bukkit.getOnlinePlayers()){
-			if (player.getDisplayName() == "Unionjackjz1"){
-				for(int i = 0; i < 4; i++) {
-					location.getWorld().playEffect(location, Effect.FLAME, 165);
-				}
-			}
+	public void onMove(PlayerMoveEvent e, Location loc){
+		for(int i = 0; i < 4; i++) {
+			loc.getWorld().playEffect(loc, Effect.FLAME, 165);
 		}
 	}
+	
 }
