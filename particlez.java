@@ -52,9 +52,7 @@ public class Main extends JavaPlugin implements Listener{
 	            double x = radius * Math.cos(y);
 	            double z = radius * Math.sin(y);
 	            //Error on the line below, not sure why
-	            PacketPlayOutWorldParticles packet = new PacketPlayOutWorldParticles(Effect.FIREWORKS_SPARK, true, loc.getX(), loc.getY(), loc.getZ(), 0, 0, 0, 0.001, 1);
-	            ((CraftPlayer)online).getHandle().playerConnection.sendPacket(packet);
-	            
+	            player.playEffect(loc, Effect.FIREWORKS_SPARK, 0, 0, 0.1, 0, 0.1, 0, 10, 0);
 	        }
 		}else{}
 	}
