@@ -1,0 +1,9 @@
+main: me.hahayoufell.party.Main
+version: 1.0
+name: DMPartys
+author: HahaYouFell
+
+
+commands:
+  party:
+    description: main command!

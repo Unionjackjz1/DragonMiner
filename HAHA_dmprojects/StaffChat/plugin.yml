@@ -1,0 +1,11 @@
+name: DMStaffChat
+version: 1.0
+main: dm.alonlevi.chat.Main
+author: HahaYouFell
+
+
+commands:
+  Staffchat:
+      description: "staffchat"
+      aliases: [sc, ac, adminchat]
+      permission:  Staffchat.use

@@ -1,0 +1,140 @@
+Java HotSpot(TM) Client VM warning: ignoring option MaxPermSize=128M; support was removed in 8.0
+Loading libraries, please wait...
+l[13:03:15 INFO]: Starting minecraft server version 1.10
+>
+[13:03:15 INFO]: Loading properties
+
+[13:03:15 INFO]: Default game type: SURVIVAL
+[13:03:15 INFO]: Generating keypair
+[13:03:16 INFO]: Starting Minecraft server on localhost:25565
+[13:03:16 INFO]: Using default channel type
+[13:03:18 INFO]: This server is running CraftBukkit version git-Bukkit-1953f52 (MC: 1.10) (Implementing API version 1.10-R0.1-SNAPSHOT)
+[13:03:18 ERROR]: Ambiguous plugin name `DMCmdSpy' for files `plugins\DMCmdSpy.jar' and `plugins\BungeeCores.jar' in `plugins'
+[13:03:18 ERROR]: Could not load 'plugins\DMJoinMessages.jar' in folder 'plugins'
+org.bukkit.plugin.InvalidPluginException: java.lang.IllegalArgumentException: Plugin already initialized!
+        at org.bukkit.plugin.java.JavaPluginLoader.loadPlugin(JavaPluginLoader.java:133) ~[craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at org.bukkit.plugin.SimplePluginManager.loadPlugin(SimplePluginManager.java:328) ~[craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at org.bukkit.plugin.SimplePluginManager.loadPlugins(SimplePluginManager.java:251) [craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at org.bukkit.craftbukkit.v1_10_R1.CraftServer.loadPlugins(CraftServer.java:294) [craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at org.bukkit.craftbukkit.v1_10_R1.CraftServer.<init>(CraftServer.java:256) [craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at net.minecraft.server.v1_10_R1.PlayerList.<init>(PlayerList.java:70) [craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at net.minecraft.server.v1_10_R1.DedicatedPlayerList.<init>(SourceFile:14) [craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at net.minecraft.server.v1_10_R1.DedicatedServer.init(DedicatedServer.java:183) [craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at net.minecraft.server.v1_10_R1.MinecraftServer.run(MinecraftServer.java:517) [craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at java.lang.Thread.run(Unknown Source) [?:1.8.0_77]
+Caused by: java.lang.IllegalArgumentException: Plugin already initialized!
+        at org.bukkit.plugin.java.PluginClassLoader.initialize(PluginClassLoader.java:98) ~[craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at org.bukkit.plugin.java.JavaPlugin.<init>(JavaPlugin.java:67) ~[craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at me.alonlevi.dragonminer.Main.<init>(Main.java:13) ~[?:?]
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_77]
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source) ~[?:1.8.0_77]
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source) ~[?:1.8.0_77]
+        at java.lang.reflect.Constructor.newInstance(Unknown Source) ~[?:1.8.0_77]
+        at java.lang.Class.newInstance(Unknown Source) ~[?:1.8.0_77]
+        at org.bukkit.plugin.java.PluginClassLoader.<init>(PluginClassLoader.java:52) ~[craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at org.bukkit.plugin.java.JavaPluginLoader.loadPlugin(JavaPluginLoader.java:129) ~[craftbukkit-latest.jar:git-Bukkit-1953f52]
+        ... 9 more
+Caused by: java.lang.IllegalStateException: Initial initialization
+        at org.bukkit.plugin.java.PluginClassLoader.initialize(PluginClassLoader.java:101) ~[craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at org.bukkit.plugin.java.JavaPlugin.<init>(JavaPlugin.java:67) ~[craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at me.alonlevi.dragonminer.Main.<init>(Main.java:13) ~[?:?]
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_77]
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source) ~[?:1.8.0_77]
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source) ~[?:1.8.0_77]
+        at java.lang.reflect.Constructor.newInstance(Unknown Source) ~[?:1.8.0_77]
+        at java.lang.Class.newInstance(Unknown Source) ~[?:1.8.0_77]
+        at org.bukkit.plugin.java.PluginClassLoader.<init>(PluginClassLoader.java:52) ~[craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at org.bukkit.plugin.java.JavaPluginLoader.loadPlugin(JavaPluginLoader.java:129) ~[craftbukkit-latest.jar:git-Bukkit-1953f52]
+        ... 9 more
+[13:03:18 ERROR]: Could not load 'plugins\DMPartys.jar' in folder 'plugins'
+org.bukkit.plugin.InvalidPluginException: java.lang.IllegalArgumentException: File cannot be null
+        at org.bukkit.plugin.java.JavaPluginLoader.loadPlugin(JavaPluginLoader.java:133) ~[craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at org.bukkit.plugin.SimplePluginManager.loadPlugin(SimplePluginManager.java:328) ~[craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at org.bukkit.plugin.SimplePluginManager.loadPlugins(SimplePluginManager.java:251) [craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at org.bukkit.craftbukkit.v1_10_R1.CraftServer.loadPlugins(CraftServer.java:294) [craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at org.bukkit.craftbukkit.v1_10_R1.CraftServer.<init>(CraftServer.java:256) [craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at net.minecraft.server.v1_10_R1.PlayerList.<init>(PlayerList.java:70) [craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at net.minecraft.server.v1_10_R1.DedicatedPlayerList.<init>(SourceFile:14) [craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at net.minecraft.server.v1_10_R1.DedicatedServer.init(DedicatedServer.java:183) [craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at net.minecraft.server.v1_10_R1.MinecraftServer.run(MinecraftServer.java:517) [craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at java.lang.Thread.run(Unknown Source) [?:1.8.0_77]
+Caused by: java.lang.IllegalArgumentException: File cannot be null
+        at org.apache.commons.lang.Validate.notNull(Validate.java:192) ~[craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at org.bukkit.configuration.file.YamlConfiguration.loadConfiguration(YamlConfiguration.java:174) ~[craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at me.hahayoufell.party.Main.<init>(Main.java:23) ~[?:?]
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_77]
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source) ~[?:1.8.0_77]
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source) ~[?:1.8.0_77]
+        at java.lang.reflect.Constructor.newInstance(Unknown Source) ~[?:1.8.0_77]
+        at java.lang.Class.newInstance(Unknown Source) ~[?:1.8.0_77]
+        at org.bukkit.plugin.java.PluginClassLoader.<init>(PluginClassLoader.java:52) ~[craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at org.bukkit.plugin.java.JavaPluginLoader.loadPlugin(JavaPluginLoader.java:129) ~[craftbukkit-latest.jar:git-Bukkit-1953f52]
+        ... 9 more
+[13:03:18 ERROR]: Could not load 'plugins\DMMinigames.jar' in folder 'plugins'
+org.bukkit.plugin.InvalidPluginException: java.lang.NullPointerException
+        at org.bukkit.plugin.java.JavaPluginLoader.loadPlugin(JavaPluginLoader.java:133) ~[craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at org.bukkit.plugin.SimplePluginManager.loadPlugin(SimplePluginManager.java:328) ~[craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at org.bukkit.plugin.SimplePluginManager.loadPlugins(SimplePluginManager.java:251) [craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at org.bukkit.craftbukkit.v1_10_R1.CraftServer.loadPlugins(CraftServer.java:294) [craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at org.bukkit.craftbukkit.v1_10_R1.CraftServer.<init>(CraftServer.java:256) [craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at net.minecraft.server.v1_10_R1.PlayerList.<init>(PlayerList.java:70) [craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at net.minecraft.server.v1_10_R1.DedicatedPlayerList.<init>(SourceFile:14) [craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at net.minecraft.server.v1_10_R1.DedicatedServer.init(DedicatedServer.java:183) [craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at net.minecraft.server.v1_10_R1.MinecraftServer.run(MinecraftServer.java:517) [craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at java.lang.Thread.run(Unknown Source) [?:1.8.0_77]
+Caused by: java.lang.NullPointerException
+        at union.haha.minigames.Main.<init>(Main.java:28) ~[?:?]
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_77]
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source) ~[?:1.8.0_77]
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source) ~[?:1.8.0_77]
+        at java.lang.reflect.Constructor.newInstance(Unknown Source) ~[?:1.8.0_77]
+        at java.lang.Class.newInstance(Unknown Source) ~[?:1.8.0_77]
+        at org.bukkit.plugin.java.PluginClassLoader.<init>(PluginClassLoader.java:52) ~[craftbukkit-latest.jar:git-Bukkit-1953f52]
+        at org.bukkit.plugin.java.JavaPluginLoader.loadPlugin(JavaPluginLoader.java:129) ~[craftbukkit-latest.jar:git-Bukkit-1953f52]
+        ... 9 more
+[13:03:18 INFO]: [DMRanks] Loading DMRanks v1.0
+[13:03:18 INFO]: [WorldFIX] Loading WorldFIX v1.0
+[13:03:18 INFO]: [DMEssentials] Loading DMEssentials v1.0
+[13:03:18 INFO]: [VeteranChat] Loading VeteranChat v1.0
+[13:03:18 INFO]: [DMCmdSpy] Loading DMCmdSpy v1.5
+[13:03:18 INFO]: [DMBuilderChat] Loading DMBuilderChat v1.0
+[13:03:18 INFO]: [DMStaffChat] Loading DMStaffChat v1.0
+[13:03:18 INFO]: [DMWorldBan] Loading DMWorldBan v1.0
+[13:03:18 INFO]: [DMWorldBan] Loading, please wait.
+[13:03:18 INFO]: [DMSpells] Loading DMSpells v1.0
+[13:03:18 INFO]: Preparing level "world"
+[13:03:20 INFO]: Preparing start region for level 0 (Seed: 842333990875915511)
+[13:03:21 INFO]: Preparing spawn area: 0%
+[13:03:22 INFO]: Preparing spawn area: 9%
+[13:03:23 INFO]: Preparing spawn area: 21%
+[13:03:24 INFO]: Preparing spawn area: 33%
+[13:03:25 INFO]: Preparing spawn area: 44%
+[13:03:26 INFO]: Preparing spawn area: 56%
+[13:03:27 INFO]: Preparing spawn area: 67%
+[13:03:28 INFO]: Preparing spawn area: 80%
+[13:03:29 INFO]: Preparing spawn area: 93%
+[13:03:30 INFO]: Preparing start region for level 1 (Seed: 842333990875915511)
+[13:03:31 INFO]: Preparing spawn area: 11%
+[13:03:32 INFO]: Preparing spawn area: 23%
+[13:03:33 INFO]: Preparing spawn area: 36%
+[13:03:34 INFO]: Preparing spawn area: 48%
+[13:03:35 INFO]: Preparing spawn area: 61%
+[13:03:36 INFO]: Preparing spawn area: 75%
+[13:03:37 INFO]: Preparing spawn area: 89%
+[13:03:38 INFO]: Preparing start region for level 2 (Seed: 842333990875915511)
+[13:03:39 INFO]: Preparing spawn area: 53%
+[13:03:39 INFO]: [DMRanks] Enabling DMRanks v1.0
+[13:03:39 INFO]: [WorldFIX] Enabling WorldFIX v1.0
+[13:03:39 INFO]: [DMEssentials] Enabling DMEssentials v1.0
+[13:03:39 INFO]: [VeteranChat] Enabling VeteranChat v1.0
+[13:03:39 INFO]: [DMCmdSpy] Enabling DMCmdSpy v1.5
+[13:03:39 INFO]: [DMBuilderChat] Enabling DMBuilderChat v1.0
+[13:03:39 INFO]: [DMStaffChat] Enabling DMStaffChat v1.0
+[13:03:39 INFO]: [DMStaffChat] Enabled
+[13:03:39 INFO]: [DMWorldBan] Enabling DMWorldBan v1.0
+[13:03:39 INFO]: [DMWorldBan] Done loading, enabled!
+[13:03:39 INFO]: [DMSpells] Enabling DMSpells v1.0
+[13:03:39 INFO]: Server permissions file permissions.yml is empty, ignoring it
+[13:03:39 INFO]: Done (21.240s)! For help, type "help" or "?"
+[13:03:40 INFO]: Plugins (9): DMRanks, WorldFIX, DMEssentials, VeteranChat, DMCmdSpy, DMBuilderChat, DMStaffChat, DMWorldBan, DMSpells
+[13:03:50 WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 9638ms behind, skipping 192 tick(s)

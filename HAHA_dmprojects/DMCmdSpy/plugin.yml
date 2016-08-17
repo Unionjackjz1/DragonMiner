@@ -1,0 +1,11 @@
+main: me.alonlevi.dm.Main
+version: 1.5
+name: DMCmdSpy
+author: HahaYouFell
+
+
+commands:
+  cmdspy:
+    description: Toggles command spy
+  chat:
+    description: Chat with specific people
